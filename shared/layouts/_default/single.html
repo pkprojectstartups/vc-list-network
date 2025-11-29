@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="container">
+    <article class="vc-detail">
+        <header>
+            <h1>{{ .Title }}</h1>
+            <a href="{{ .Params.website }}" target="_blank" class="website">🌐 Visit Website</a>
+        </header>
+
+        <section class="vc-info">
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Region:</strong> {{ .Params.region }}
+                </div>
+                <div class="info-item">
+                    <strong>HQ:</strong> {{ .Params.hq_country }}
+                </div>
+                <div class="info-item">
+                    <strong>Type:</strong> {{ .Params.investor_type }}
+                </div>
+                <div class="info-item">
+                    <strong>Stages:</strong> {{ delimit .Params.stages ", " }}
+                </div>
+            </div>
+
+            <div class="sectors-section">
+                <strong>Focus Areas:</strong>
+                <div class="sectors">
+                    {{ range .Params.sectors }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ if .Params.sub_sectors }}
+                <div class="sub-sectors">
+                    {{ range .Params.sub_sectors }}
+                    <span class="sub-tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+
+            {{ if .Params.recent_portfolio }}
+            <div class="portfolio">
+                <strong>Recent Portfolio Companies:</strong>
+                <ul>
+                    {{ range .Params.recent_portfolio }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </section>
+
+        <section class="description">
+            {{ .Content }}
+        </section>
+
+        <a href="/" class="back-link">← Back to list</a>
+    </article>
+</div>
+{{ end }}

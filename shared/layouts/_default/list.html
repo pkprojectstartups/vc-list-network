@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="container">
+    <section class="hero">
+        <h2>{{ .Site.Params.description }}</h2>
+        <p>Showing {{ len .Pages }} active venture capital firms</p>
+    </section>
+
+    <section class="vc-list">
+        {{ range .Pages }}
+        {{ if eq .Type "vcs" }}
+        <article class="vc-card">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <div class="meta">
+                <span class="region">📍 {{ .Params.region }}</span>
+                <span class="stages">💰 {{ delimit .Params.stages ", " }}</span>
+            </div>
+            <div class="sectors">
+                {{ range .Params.sectors }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            <p>{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="read-more">View Details →</a>
+        </article>
+        {{ end }}
+        {{ end }}
+    </section>
+</div>
+{{ end }}
