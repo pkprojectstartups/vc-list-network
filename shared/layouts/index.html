@@ -1,22 +1,20 @@
 {{ define "main" }}
 <div class="container">
     <section class="hero">
-        <h2>{{ .Title }}</h2>
-        <p>Showing {{ len .Pages }} entries</p>
+        <h2>{{ .Site.Params.description }}</h2>
+        <p>Showing {{ len (where .Site.RegularPages "Type" "vcs") }} active venture capital firms</p>
     </section>
 
     <section class="vc-list">
-        {{ range .Pages }}
+        {{ range where .Site.RegularPages "Type" "vcs" }}
         <article class="vc-card">
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            {{ if .Params.region }}
             <div class="meta">
                 <span class="region">📍 {{ .Params.region }}</span>
                 {{ if .Params.stages }}
                 <span class="stages">💰 {{ delimit .Params.stages ", " }}</span>
                 {{ end }}
             </div>
-            {{ end }}
             {{ if .Params.sectors }}
             <div class="sectors">
                 {{ range .Params.sectors }}
