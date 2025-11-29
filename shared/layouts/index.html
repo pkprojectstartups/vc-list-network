@@ -2,11 +2,22 @@
 <div class="container">
     <section class="hero">
         <h2>{{ .Site.Params.description }}</h2>
-        <p>Showing {{ len (where .Site.RegularPages "Type" "vcs") }} active venture capital firms</p>
+        {{ $sectorFilter := .Site.Params.sector_filter }}
+        {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
+        {{ if $sectorFilter }}
+            {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" (slice $sectorFilter) }}
+        {{ end }}
+        <p>Showing {{ len $filteredPages }} active venture capital firms</p>
     </section>
 
     <section class="vc-list">
-        {{ range where .Site.RegularPages "Type" "vcs" }}
+        {{ $sectorFilter := .Site.Params.sector_filter }}
+        {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
+        {{ if $sectorFilter }}
+            {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" (slice $sectorFilter) }}
+        {{ end }}
+        
+        {{ range $filteredPages }}
         <article class="vc-card">
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <div class="meta">
