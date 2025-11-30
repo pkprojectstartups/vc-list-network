@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI VC List - AI &amp; Machine Learning Venture Capitalists</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on AI VC List - AI &amp; Machine Learning Venture Capitalists</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Andreessen Horowitz (a16z)</title>
+      <link>http://localhost:1313/vcs/andreessen-horowitz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/andreessen-horowitz/</guid>
+      <description>&lt;p&gt;Andreessen Horowitz (a16z) is a Silicon Valley venture capital firm with dedicated funds for AI. They&amp;rsquo;ve been aggressive investors in generative AI startups and maintain a strong thesis around AI infrastructure and applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>General Catalyst</title>
+      <link>http://localhost:1313/vcs/general-catalyst/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/general-catalyst/</guid>
+      <description>&lt;p&gt;General Catalyst focuses on transformative companies across AI, healthcare, and fintech. They take a hands-on approach with portfolio companies and have a strong track record in healthcare AI applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sequoia Capital</title>
+      <link>http://localhost:1313/vcs/sequoia-capital/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/sequoia-capital/</guid>
+      <description>&lt;p&gt;Sequoia Capital is one of the most prestigious venture capital firms globally, with a strong focus on AI and enterprise technology. Known for backing companies like Apple, Google, and Airbnb early on, they continue to lead investments in cutting-edge AI infrastructure and applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

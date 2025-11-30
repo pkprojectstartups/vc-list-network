@@ -1,0 +1,28 @@
+﻿baseURL = "https://deeptechvclist.com/"
+languageCode = "en-us"
+title = "DeepTech VC List - Deep Technology Venture Capitalists"
+
+[params]
+  description = "Curated directory of venture capital firms actively investing in deep tech, advanced computing, and frontier technology startups"
+  sector_filter = "DeepTech"
+
+[module]
+  [[module.mounts]]
+    source = "../../shared/content"
+    target = "content"
+  [[module.mounts]]
+    source = "../../shared/layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "../../shared/static"
+    target = "static"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
