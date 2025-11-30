@@ -1,10 +1,41 @@
-<header>
+<header class="site-header">
     <div class="container">
-        <h1><a href="/">{{ .Site.Title }}</a></h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="#filters">Browse</a>
-            <a href="/about">About</a>
-        </nav>
+        <div class="header-content">
+            <div class="site-branding">
+                <a href="/" class="site-logo">
+                    <span class="logo-icon">🎯</span>
+                    <span class="site-title">{{ .Site.Title }}</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-menu">
+                    <div class="network-dropdown">
+                        <button class="network-toggle">
+                            Our Network <span class="arrow">▼</span>
+                        </button>
+                        <div class="network-menu">
+                            <a href="https://aivclist.com" {{ if eq .Site.BaseURL "https://aivclist.com/" }}class="active"{{ end }}>AI VCs</a>
+                            <a href="https://fintechvclist.com" {{ if eq .Site.BaseURL "https://fintechvclist.com/" }}class="active"{{ end }}>Fintech VCs</a>
+                            <a href="https://climatevclist.com" {{ if eq .Site.BaseURL "https://climatevclist.com/" }}class="active"{{ end }}>Climate VCs</a>
+                            <a href="https://saasvclist.com" {{ if eq .Site.BaseURL "https://saasvclist.com/" }}class="active"{{ end }}>SaaS VCs</a>
+                            <a href="https://biotechvclist.com" {{ if eq .Site.BaseURL "https://biotechvclist.com/" }}class="active"{{ end }}>Biotech VCs</a>
+                            <a href="https://deeptechvclist.com" {{ if eq .Site.BaseURL "https://deeptechvclist.com/" }}class="active"{{ end }}>DeepTech VCs</a>
+                            <a href="https://healthcarevclist.com" {{ if eq .Site.BaseURL "https://healthcarevclist.com/" }}class="active"{{ end }}>Healthcare VCs</a>
+                            <a href="https://consumervclist.com" {{ if eq .Site.BaseURL "https://consumervclist.com/" }}class="active"{{ end }}>Consumer VCs</a>
+                            <a href="https://web3vclist.com" {{ if eq .Site.BaseURL "https://web3vclist.com/" }}class="active"{{ end }}>Web3 VCs</a>
+                            <a href="https://seedvclist.com" {{ if eq .Site.BaseURL "https://seedvclist.com/" }}class="active"{{ end }}>Seed VCs</a>
+                            <a href="https://preseedvclist.com" {{ if eq .Site.BaseURL "https://preseedvclist.com/" }}class="active"{{ end }}>Pre-Seed VCs</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </div>
 </header>
