@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title -->
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- Meta Description -->
+    <meta name="description" content="{{ if .Params.meta_description }}{{ .Params.meta_description }}{{ else if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- Keywords -->
+    {{ if .Params.meta_keywords }}
+    <meta name="keywords" content="{{ delimit .Params.meta_keywords ", " }}">
+    {{ end }}
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="{{ .Permalink }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta property="og:description" content="{{ if .Params.meta_description }}{{ .Params.meta_description }}{{ else if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ if .Params.meta_description }}{{ .Params.meta_description }}{{ else if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-image.png">
+    
+    <!-- Favicon (we'll add this) -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,6 +51,17 @@
             }
         }
     </script>
+    
+    <!-- Google Analytics (we'll add this) -->
+    {{ if .Site.Params.ga_id }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.ga_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ .Site.Params.ga_id }}');
+    </script>
+    {{ end }}
 </head>
 <body class="bg-gray-50">
     {{ partial "header.html" . }}

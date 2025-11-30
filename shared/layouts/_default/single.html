@@ -1,67 +1,92 @@
 {{ define "main" }}
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- JSON-LD Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ .Title }}",
+        "url": "{{ .Params.website }}",
+        "description": "{{ if .Params.meta_description }}{{ .Params.meta_description }}{{ else }}{{ .Params.description }}{{ end }}",
+        {{ if .Params.hq_city }}"address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ .Params.hq_city }}",
+            "addressCountry": "{{ .Params.hq_country }}"
+        },{{ end }}
+        "knowsAbout": [
+            {{ range $index, $sector := .Params.sectors }}{{ if $index }},{{ end }}"{{ $sector }}"{{ end }}
+        ]
+    }
+    </script>
+
     <article class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <!-- Header -->
         <header class="p-8 border-b border-gray-200">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ .Title }}</h1>
-            <a href="{{ .Params.website }}" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                </svg>
-                Visit Website
-            </a>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">{{ .Title }}</h1>
+            {{ if .Params.description }}
+            <p class="text-xl text-gray-600 mb-4">{{ .Params.description }}</p>
+            {{ end }}
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ .Params.website }}" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                    Visit Website
+                </a>
+            </div>
         </header>
 
         <!-- Content -->
         <div class="p-8">
             <!-- Info Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 p-6 bg-gray-50 rounded-lg">
+                {{ if .Params.hq_city }}
                 <div>
-                    <div class="text-sm font-medium text-gray-500 mb-1">Region</div>
-                    <div class="text-gray-900 font-semibold">{{ .Params.region }}</div>
+                    <div class="text-sm font-medium text-gray-500 mb-1">Location</div>
+                    <div class="text-gray-900 font-semibold">{{ .Params.hq_city }}, {{ .Params.hq_country }}</div>
                 </div>
-                <div>
-                    <div class="text-sm font-medium text-gray-500 mb-1">Headquarters</div>
-                    <div class="text-gray-900 font-semibold">{{ .Params.hq_country }}</div>
-                </div>
+                {{ end }}
+                {{ if .Params.investor_type }}
                 <div>
                     <div class="text-sm font-medium text-gray-500 mb-1">Type</div>
                     <div class="text-gray-900 font-semibold">{{ .Params.investor_type }}</div>
                 </div>
+                {{ end }}
+                {{ if .Params.stages }}
                 <div>
                     <div class="text-sm font-medium text-gray-500 mb-1">Investment Stages</div>
                     <div class="text-gray-900 font-semibold">{{ delimit .Params.stages ", " }}</div>
                 </div>
+                {{ end }}
+                {{ if .Params.check_size }}
+                <div>
+                    <div class="text-sm font-medium text-gray-500 mb-1">Check Size</div>
+                    <div class="text-gray-900 font-semibold">{{ .Params.check_size }}</div>
+                </div>
+                {{ end }}
             </div>
 
             <!-- Sectors -->
+            {{ if .Params.sectors }}
             <div class="mb-8">
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">Focus Areas</h3>
-                <div class="flex flex-wrap gap-2 mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">Investment Focus</h3>
+                <div class="flex flex-wrap gap-2">
                     {{ range .Params.sectors }}
                     <span class="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-blue-50 text-primary border border-blue-200">
                         {{ . }}
                     </span>
                     {{ end }}
                 </div>
-                {{ if .Params.sub_sectors }}
-                <div class="flex flex-wrap gap-2">
-                    {{ range .Params.sub_sectors }}
-                    <span class="inline-flex items-center px-3 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
-                        {{ . }}
-                    </span>
-                    {{ end }}
-                </div>
-                {{ end }}
             </div>
+            {{ end }}
 
             <!-- Portfolio -->
-            {{ if .Params.recent_portfolio }}
+            {{ if .Params.notable_portfolio }}
             <div class="mb-8 p-6 bg-gray-50 rounded-lg">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Portfolio Companies</h3>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Notable Portfolio Companies</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                    {{ range .Params.recent_portfolio }}
+                    {{ range .Params.notable_portfolio }}
                     <div class="bg-white px-4 py-2 rounded-lg border border-gray-200 text-sm font-medium text-gray-700 text-center">
                         {{ . }}
                     </div>
@@ -71,9 +96,43 @@
             {{ end }}
 
             <!-- Description -->
-            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-8">
                 {{ .Content }}
             </div>
+
+            <!-- Similar VCs Section -->
+            {{ $currentSectors := .Params.sectors }}
+            {{ $currentSlug := .Params.slug }}
+            {{ $similarVCs := slice }}
+            {{ range where .Site.RegularPages "Type" "vcs" }}
+                {{ if ne .Params.slug $currentSlug }}
+                    {{ $overlap := intersect .Params.sectors $currentSectors }}
+                    {{ if gt (len $overlap) 0 }}
+                        {{ $similarVCs = $similarVCs | append . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            
+            {{ if gt (len $similarVCs) 0 }}
+            <div class="border-t border-gray-200 pt-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Similar VCs</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {{ range first 4 $similarVCs }}
+                    <a href="{{ .Permalink }}" class="block p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-primary hover:shadow-md transition-all">
+                        <h4 class="font-semibold text-gray-900 mb-1">{{ .Title }}</h4>
+                        {{ if .Params.description }}
+                        <p class="text-sm text-gray-600 mb-2">{{ .Params.description }}</p>
+                        {{ end }}
+                        <div class="flex flex-wrap gap-1">
+                            {{ range first 3 .Params.sectors }}
+                            <span class="text-xs px-2 py-1 bg-blue-50 text-primary rounded">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
 
             <!-- Back Link -->
             <div class="mt-8 pt-8 border-t border-gray-200">
@@ -81,7 +140,7 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                     </svg>
-                    Back to list
+                    Back to all VCs
                 </a>
             </div>
         </div>
