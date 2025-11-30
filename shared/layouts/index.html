@@ -1,16 +1,22 @@
 {{ define "main" }}
-<div class="container">
-    <section class="hero">
-        <h2>{{ .Site.Params.description }}</h2>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            {{ .Site.Params.description }}
+        </h1>
         {{ $sectorFilter := .Site.Params.sector_filter }}
         {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
         {{ if $sectorFilter }}
             {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" (slice $sectorFilter) }}
         {{ end }}
-        <p>Showing {{ len $filteredPages }} active venture capital firms</p>
+        <p class="text-xl text-gray-600">
+            Showing {{ len $filteredPages }} active venture capital firms
+        </p>
     </section>
 
-    <section class="vc-list">
+    <!-- VC Cards Grid -->
+    <section class="space-y-6">
         {{ $sectorFilter := .Site.Params.sector_filter }}
         {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
         {{ if $sectorFilter }}
@@ -18,23 +24,55 @@
         {{ end }}
         
         {{ range $filteredPages }}
-        <article class="vc-card">
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <div class="meta">
-                <span class="region">📍 {{ .Params.region }}</span>
+        <article class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-200">
+            <h2 class="text-2xl font-bold mb-3">
+                <a href="{{ .Permalink }}" class="text-gray-900 hover:text-primary transition-colors">
+                    {{ .Title }}
+                </a>
+            </h2>
+            
+            <!-- Meta Information -->
+            <div class="flex flex-wrap gap-4 mb-4 text-sm text-gray-600">
+                <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    {{ .Params.region }}
+                </span>
                 {{ if .Params.stages }}
-                <span class="stages">💰 {{ delimit .Params.stages ", " }}</span>
+                <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    {{ delimit .Params.stages ", " }}
+                </span>
                 {{ end }}
             </div>
+            
+            <!-- Sector Tags -->
             {{ if .Params.sectors }}
-            <div class="sectors">
+            <div class="flex flex-wrap gap-2 mb-4">
                 {{ range .Params.sectors }}
-                <span class="tag">{{ . }}</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-primary">
+                    {{ . }}
+                </span>
                 {{ end }}
             </div>
             {{ end }}
-            <p>{{ .Summary }}</p>
-            <a href="{{ .Permalink }}" class="read-more">View Details →</a>
+            
+            <!-- Description -->
+            <p class="text-gray-600 mb-4 leading-relaxed">
+                {{ .Summary }}
+            </p>
+            
+            <!-- Read More Link -->
+            <a href="{{ .Permalink }}" class="inline-flex items-center text-primary font-medium hover:text-blue-700 transition-colors">
+                View Details
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
         </article>
         {{ end }}
     </section>

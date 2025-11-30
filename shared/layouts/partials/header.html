@@ -1,41 +1,65 @@
-<header class="site-header">
-    <div class="container">
-        <div class="header-content">
-            <div class="site-branding">
-                <a href="/" class="site-logo">
-                    <span class="logo-icon">🎯</span>
-                    <span class="site-title">{{ .Site.Title }}</span>
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo/Brand -->
+            <div class="flex items-center">
+                <a href="/" class="flex items-center space-x-2 text-gray-900 hover:text-primary transition-colors">
+                    <span class="text-2xl">🎯</span>
+                    <span class="font-semibold text-lg">{{ .Site.Title }}</span>
                 </a>
             </div>
             
-            <nav class="main-nav">
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <div class="nav-menu">
-                    <div class="network-dropdown">
-                        <button class="network-toggle">
-                            Our Network <span class="arrow">▼</span>
-                        </button>
-                        <div class="network-menu">
-                            <a href="https://aivclist.com" {{ if eq .Site.BaseURL "https://aivclist.com/" }}class="active"{{ end }}>AI VCs</a>
-                            <a href="https://fintechvclist.com" {{ if eq .Site.BaseURL "https://fintechvclist.com/" }}class="active"{{ end }}>Fintech VCs</a>
-                            <a href="https://climatevclist.com" {{ if eq .Site.BaseURL "https://climatevclist.com/" }}class="active"{{ end }}>Climate VCs</a>
-                            <a href="https://saasvclist.com" {{ if eq .Site.BaseURL "https://saasvclist.com/" }}class="active"{{ end }}>SaaS VCs</a>
-                            <a href="https://biotechvclist.com" {{ if eq .Site.BaseURL "https://biotechvclist.com/" }}class="active"{{ end }}>Biotech VCs</a>
-                            <a href="https://deeptechvclist.com" {{ if eq .Site.BaseURL "https://deeptechvclist.com/" }}class="active"{{ end }}>DeepTech VCs</a>
-                            <a href="https://healthcarevclist.com" {{ if eq .Site.BaseURL "https://healthcarevclist.com/" }}class="active"{{ end }}>Healthcare VCs</a>
-                            <a href="https://consumervclist.com" {{ if eq .Site.BaseURL "https://consumervclist.com/" }}class="active"{{ end }}>Consumer VCs</a>
-                            <a href="https://web3vclist.com" {{ if eq .Site.BaseURL "https://web3vclist.com/" }}class="active"{{ end }}>Web3 VCs</a>
-                            <a href="https://seedvclist.com" {{ if eq .Site.BaseURL "https://seedvclist.com/" }}class="active"{{ end }}>Seed VCs</a>
-                            <a href="https://preseedvclist.com" {{ if eq .Site.BaseURL "https://preseedvclist.com/" }}class="active"{{ end }}>Pre-Seed VCs</a>
-                        </div>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-4">
+                <div class="relative group">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center space-x-2">
+                        <span>Our Network</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                        <a href="https://aivclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://aivclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">AI VCs</a>
+                        <a href="https://fintechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://fintechvclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Fintech VCs</a>
+                        <a href="https://climatevclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://climatevclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Climate VCs</a>
+                        <a href="https://saasvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://saasvclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">SaaS VCs</a>
+                        <a href="https://biotechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://biotechvclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Biotech VCs</a>
+                        <a href="https://deeptechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://deeptechvclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">DeepTech VCs</a>
+                        <a href="https://healthcarevclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://healthcarevclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Healthcare VCs</a>
+                        <a href="https://consumervclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://consumervclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Consumer VCs</a>
+                        <a href="https://web3vclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://web3vclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Web3 VCs</a>
+                        <a href="https://seedvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://seedvclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Seed VCs</a>
+                        <a href="https://preseedvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 {{ if eq .Site.BaseURL "https://preseedvclist.com/" }}bg-primary text-white hover:bg-blue-700{{ end }}">Pre-Seed VCs</a>
                     </div>
                 </div>
             </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+        <div class="px-4 py-4 space-y-2">
+            <div class="font-semibold text-gray-900 mb-3">Our Network</div>
+            <a href="https://aivclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://aivclist.com/" }}bg-primary text-white{{ end }}">AI VCs</a>
+            <a href="https://fintechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://fintechvclist.com/" }}bg-primary text-white{{ end }}">Fintech VCs</a>
+            <a href="https://climatevclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://climatevclist.com/" }}bg-primary text-white{{ end }}">Climate VCs</a>
+            <a href="https://saasvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://saasvclist.com/" }}bg-primary text-white{{ end }}">SaaS VCs</a>
+            <a href="https://biotechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://biotechvclist.com/" }}bg-primary text-white{{ end }}">Biotech VCs</a>
+            <a href="https://deeptechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://deeptechvclist.com/" }}bg-primary text-white{{ end }}">DeepTech VCs</a>
+            <a href="https://healthcarevclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://healthcarevclist.com/" }}bg-primary text-white{{ end }}">Healthcare VCs</a>
+            <a href="https://consumervclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://consumervclist.com/" }}bg-primary text-white{{ end }}">Consumer VCs</a>
+            <a href="https://web3vclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://web3vclist.com/" }}bg-primary text-white{{ end }}">Web3 VCs</a>
+            <a href="https://seedvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://seedvclist.com/" }}bg-primary text-white{{ end }}">Seed VCs</a>
+            <a href="https://preseedvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://preseedvclist.com/" }}bg-primary text-white{{ end }}">Pre-Seed VCs</a>
         </div>
     </div>
 </header>
