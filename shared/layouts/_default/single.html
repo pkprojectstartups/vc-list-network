@@ -1,23 +1,19 @@
 {{ define "main" }}
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- JSON-LD Schema for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "{{ .Title }}",
-        "url": "{{ .Params.website }}",
-        "description": "{{ if .Params.meta_description }}{{ .Params.meta_description }}{{ else }}{{ .Params.description }}{{ end }}",
-        {{ if .Params.founded_year }}"foundingDate": "{{ .Params.founded_year }}",{{ end }}
-        {{ if .Params.offices }}"address": {
-            "@type": "PostalAddress",
-            "addressLocality": "{{ index (split (index .Params.offices 0) "(") 0 | trim }}"
-        },{{ end }}
-        "knowsAbout": [
-            {{ range $index, $sector := .Params.sectors }}{{ if $index }},{{ end }}"{{ $sector }}"{{ end }}
-        ]
-    }
-    </script>
+<!-- JSON-LD Schema for SEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ .Title }}",
+    "url": "{{ .Params.website }}",
+    "description": "{{ if .Params.meta_description }}{{ .Params.meta_description }}{{ else }}{{ .Params.description }}{{ end }}"{{ if .Params.founded_year }},
+    "foundingDate": "{{ .Params.founded_year }}"{{ end }}{{ if .Params.offices }},
+    "location": "{{ index .Params.offices 0 }}"{{ end }}{{ if .Params.sectors }},
+    "knowsAbout": [{{ range $index, $sector := .Params.sectors }}{{ if $index }}, {{ end }}"{{ $sector }}"{{ end }}]{{ end }}
+}
+</script>
 
     <article class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <!-- Header -->
