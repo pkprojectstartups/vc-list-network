@@ -5,11 +5,25 @@
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {{ .Site.Params.description }}
         </h1>
+        
         {{ $sectorFilter := .Site.Params.sector_filter }}
         {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
+        
         {{ if $sectorFilter }}
-            {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" (slice $sectorFilter) }}
+            {{ if eq (printf "%T" $sectorFilter) "string" }}
+                <!-- Handle comma-separated string -->
+                {{ $filterArray := split $sectorFilter "," }}
+                {{ $cleanFilters := slice }}
+                {{ range $filterArray }}
+                    {{ $cleanFilters = $cleanFilters | append (trim . " ") }}
+                {{ end }}
+                {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" $cleanFilters }}
+            {{ else }}
+                <!-- Handle array directly -->
+                {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" $sectorFilter }}
+            {{ end }}
         {{ end }}
+        
         <p class="text-xl text-gray-600">
             {{ len $filteredPages }} Active Venture Capital Firms
         </p>
@@ -17,12 +31,6 @@
 
     <!-- VC Cards Grid -->
     <section class="space-y-6">
-        {{ $sectorFilter := .Site.Params.sector_filter }}
-        {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
-        {{ if $sectorFilter }}
-            {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" (slice $sectorFilter) }}
-        {{ end }}
-        
         {{ range $filteredPages }}
         <article class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-200">
             <!-- Header -->

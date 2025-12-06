@@ -1,32 +1,207 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vcs on AI VC List - AI &amp; Machine Learning Venture Capitalists</title>
+    <title>Vcs on Pre-Seed VC List - Pre-Seed Stage Venture Capitalists</title>
     <link>http://localhost:1313/vcs/</link>
-    <description>Recent content in Vcs on AI VC List - AI &amp; Machine Learning Venture Capitalists</description>
+    <description>Recent content in Vcs on Pre-Seed VC List - Pre-Seed Stage Venture Capitalists</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vcs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Andreessen Horowitz (a16z)</title>
-      <link>http://localhost:1313/vcs/andreessen-horowitz/</link>
+      <title>2048 Ventures</title>
+      <link>http://localhost:1313/vcs/2048-ventures-2048vc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vcs/andreessen-horowitz/</guid>
-      <description>&lt;p&gt;Andreessen Horowitz (a16z) is a Silicon Valley venture capital firm with dedicated funds for AI. They&amp;rsquo;ve been aggressive investors in generative AI startups and maintain a strong thesis around AI infrastructure and applications.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/vcs/2048-ventures-2048vc/</guid>
+      <description></description>
     </item>
     <item>
-      <title>General Catalyst</title>
-      <link>http://localhost:1313/vcs/general-catalyst/</link>
+      <title>640 Oxford</title>
+      <link>http://localhost:1313/vcs/640-oxford-640oxfordcom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vcs/general-catalyst/</guid>
-      <description>&lt;p&gt;General Catalyst focuses on transformative companies across AI, healthcare, and fintech. They take a hands-on approach with portfolio companies and have a strong track record in healthcare AI applications.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/vcs/640-oxford-640oxfordcom/</guid>
+      <description></description>
     </item>
     <item>
-      <title>Sequoia Capital</title>
-      <link>http://localhost:1313/vcs/sequoia-capital/</link>
+      <title>Active Capital</title>
+      <link>http://localhost:1313/vcs/active-capital-activevc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vcs/sequoia-capital/</guid>
-      <description>&lt;p&gt;Sequoia Capital is one of the most prestigious venture capital firms globally, with a strong focus on AI and enterprise technology. Known for backing companies like Apple, Google, and Airbnb early on, they continue to lead investments in cutting-edge AI infrastructure and applications.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/vcs/active-capital-activevc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Afore Capital</title>
+      <link>http://localhost:1313/vcs/afore-capital-aforevc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/afore-capital-aforevc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Fund</title>
+      <link>http://localhost:1313/vcs/ai-fund-aifundai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/ai-fund-aifundai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Air Street Capital</title>
+      <link>http://localhost:1313/vcs/air-street-capital-airstreetcom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/air-street-capital-airstreetcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AIX Ventures</title>
+      <link>http://localhost:1313/vcs/aix-ventures-aixventurescom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/aix-ventures-aixventurescom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alpha Intelligence Capital</title>
+      <link>http://localhost:1313/vcs/alpha-intelligence-capital-aicapitalai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/alpha-intelligence-capital-aicapitalai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Amplify Partners</title>
+      <link>http://localhost:1313/vcs/amplify-partners-amplifypartnerscom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/amplify-partners-amplifypartnerscom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Audacious Ventures</title>
+      <link>http://localhost:1313/vcs/audacious-ventures-audaciousco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/audacious-ventures-audaciousco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banyan Ventures</title>
+      <link>http://localhost:1313/vcs/banyan-ventures-banyan-vccom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/banyan-ventures-banyan-vccom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basis Set Ventures</title>
+      <link>http://localhost:1313/vcs/basis-set-ventures-basissetcom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/basis-set-ventures-basissetcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bee Partners</title>
+      <link>http://localhost:1313/vcs/bee-partners-beepartnersvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/bee-partners-beepartnersvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bloomberg Beta</title>
+      <link>http://localhost:1313/vcs/bloomberg-beta-bloombergbetacom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/bloomberg-beta-bloombergbetacom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Boost VC</title>
+      <link>http://localhost:1313/vcs/boost-vc-boostvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/boost-vc-boostvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BootstrapLabs</title>
+      <link>http://localhost:1313/vcs/bootstraplabs-bootstraplabscom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/bootstraplabs-bootstraplabscom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conviction</title>
+      <link>http://localhost:1313/vcs/conviction-convictioncom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/conviction-convictioncom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Costanoa Ventures</title>
+      <link>http://localhost:1313/vcs/costanoa-ventures-costanoavc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/costanoa-ventures-costanoavc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DCVC</title>
+      <link>http://localhost:1313/vcs/dcvc-dcvccom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/dcvc-dcvccom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Differential Ventures</title>
+      <link>http://localhost:1313/vcs/differential-ventures-differentialvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/differential-ventures-differentialvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First Round Capital</title>
+      <link>http://localhost:1313/vcs/first-round-capital-firstroundcom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/first-round-capital-firstroundcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First Star Ventures</title>
+      <link>http://localhost:1313/vcs/first-star-ventures-firststarvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/first-star-ventures-firststarvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Flying Fish Partners</title>
+      <link>http://localhost:1313/vcs/flying-fish-partners-flyingfishvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/flying-fish-partners-flyingfishvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Founders Fund</title>
+      <link>http://localhost:1313/vcs/founders-fund-foundersfundcom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/founders-fund-foundersfundcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FUSE</title>
+      <link>http://localhost:1313/vcs/fuse-fusevc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/fuse-fusevc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Glasswing Ventures</title>
+      <link>http://localhost:1313/vcs/glasswing-ventures-glasswingvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/glasswing-ventures-glasswingvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Good Capital</title>
+      <link>http://localhost:1313/vcs/good-capital-goodcapitalvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/good-capital-goodcapitalvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gradient Ventures</title>
+      <link>http://localhost:1313/vcs/gradient-ventures-gradientcom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vcs/gradient-ventures-gradientcom/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
