@@ -51,7 +51,7 @@
             <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div class="flex-1">
                     <h2 class="text-2xl font-bold mb-2">
-                        <a href="{{ .Permalink }}" class="text-gray-900 hover:text-primary transition-colors">
+                        <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-primary transition-colors">
                             {{ .Title }}
                         </a>
                     </h2>
@@ -146,7 +146,7 @@
             {{ end }}
             
             <!-- View Details Link -->
-            <a href="{{ .Permalink }}" class="inline-flex items-center text-primary font-medium hover:text-blue-700 transition-colors">
+            <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary font-medium hover:text-blue-700 transition-colors">
                 View Full Profile
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
