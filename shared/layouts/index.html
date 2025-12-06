@@ -7,11 +7,12 @@
         </h1>
         
         {{ $sectorFilter := .Site.Params.sector_filter }}
+        {{ $stageFilter := .Site.Params.stage_filter }}
         {{ $filteredPages := where .Site.RegularPages "Type" "vcs" }}
         
+        <!-- Filter by sectors if sector_filter exists -->
         {{ if $sectorFilter }}
             {{ if eq (printf "%T" $sectorFilter) "string" }}
-                <!-- Handle comma-separated string -->
                 {{ $filterArray := split $sectorFilter "," }}
                 {{ $cleanFilters := slice }}
                 {{ range $filterArray }}
@@ -19,8 +20,21 @@
                 {{ end }}
                 {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" $cleanFilters }}
             {{ else }}
-                <!-- Handle array directly -->
                 {{ $filteredPages = where $filteredPages ".Params.sectors" "intersect" $sectorFilter }}
+            {{ end }}
+        {{ end }}
+        
+        <!-- Filter by stages if stage_filter exists -->
+        {{ if $stageFilter }}
+            {{ if eq (printf "%T" $stageFilter) "string" }}
+                {{ $filterArray := split $stageFilter "," }}
+                {{ $cleanFilters := slice }}
+                {{ range $filterArray }}
+                    {{ $cleanFilters = $cleanFilters | append (trim . " ") }}
+                {{ end }}
+                {{ $filteredPages = where $filteredPages ".Params.stages" "intersect" $cleanFilters }}
+            {{ else }}
+                {{ $filteredPages = where $filteredPages ".Params.stages" "intersect" $stageFilter }}
             {{ end }}
         {{ end }}
         
