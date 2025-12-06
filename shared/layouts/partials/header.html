@@ -4,13 +4,22 @@
             <!-- Logo/Brand -->
             <div class="flex items-center">
                 <a href="/" class="flex items-center space-x-2 text-gray-900 hover:text-primary transition-colors">
-                    <span class="text-2xl">🎯</span>
+                    <img src="/images/logo.png" alt="{{ .Site.Title }}" class="h-8 w-8">
                     <span class="font-semibold text-lg">{{ .Site.Title }}</span>
                 </a>
             </div>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-4">
+                <!-- Premium CTAs -->
+                <a href="/vc-contacts" class="text-primary border border-primary px-4 py-2 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors">
+                    📧 Get VC Emails
+                </a>
+                <a href="/vc-database" class="bg-amber-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-600 transition-colors">
+                    💎 Full Database
+                </a>
+                
+                <!-- Network Dropdown -->
                 <div class="relative group">
                     <button class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center space-x-2">
                         <span>Our Network</span>
@@ -48,6 +57,16 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
         <div class="px-4 py-4 space-y-2">
+            <!-- CTAs in Mobile -->
+            <a href="/vc-contacts" class="block px-4 py-2 text-primary border border-primary rounded-lg font-medium text-center">
+                📧 Get VC Emails
+            </a>
+            <a href="/vc-database" class="block px-4 py-2 bg-amber-500 text-white rounded-lg font-medium text-center">
+                💎 Full Database
+            </a>
+            
+            <div class="border-t border-gray-200 my-3"></div>
+            
             <div class="font-semibold text-gray-900 mb-3">Our Network</div>
             <a href="https://aivclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://aivclist.com/" }}bg-primary text-white{{ end }}">AI VCs</a>
             <a href="https://fintechvclist.com" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg {{ if eq .Site.BaseURL "https://fintechvclist.com/" }}bg-primary text-white{{ end }}">Fintech VCs</a>
