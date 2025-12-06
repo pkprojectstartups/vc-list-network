@@ -1,36 +1,92 @@
-<footer class="bg-gray-900 text-white mt-20">
+<footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-white mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <!-- About Section -->
             <div class="col-span-1">
-                <h3 class="text-xl font-bold mb-4">VC List Network</h3>
-                <p class="text-gray-400 leading-relaxed">
+                <div class="flex items-center space-x-2 mb-4">
+                    <img src="/images/logo.png" alt="VC List Network" class="h-8 w-8 rounded-md">
+                    <h3 class="text-xl font-bold">VC List Network</h3>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-6">
                     Curated directories of active venture capital firms across industries and stages.
                 </p>
+                
+                <!-- Premium Links -->
+                <div class="space-y-2 mb-6">
+                    <a href="https://projectstartups.com" class="flex items-center text-sm text-gray-300 hover:text-white transition-colors group">
+                        <span class="mr-2">📧</span>
+                        <span class="group-hover:underline">Get VC Emails</span>
+                    </a>
+                    <a href="https://projectstartups.gumroad.com" class="flex items-center text-sm text-gray-300 hover:text-white transition-colors group">
+                        <span class="mr-2">💎</span>
+                        <span class="group-hover:underline">VC Firms Database</span>
+                    </a>
+                    <a href="https://projectstartups.gumroad.com/subscribe" class="flex items-center text-sm text-gray-300 hover:text-white transition-colors group">
+                        <span class="mr-2">✉️</span>
+                        <span class="group-hover:underline">Subscribe to Updates</span>
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.linkedin.com/in/projectstartups/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-all hover:scale-110" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/projectstartups" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-all hover:scale-110" aria-label="Twitter">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
             
             <!-- Network Links -->
-            <div class="col-span-2">
+            <div class="col-span-1 md:col-span-2">
                 <h4 class="text-lg font-semibold mb-4 text-gray-300">Our Network</h4>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <a href="https://aivclist.com" class="text-gray-400 hover:text-white transition-colors">AI VCs</a>
-                    <a href="https://fintechvclist.com" class="text-gray-400 hover:text-white transition-colors">Fintech VCs</a>
-                    <a href="https://climatevclist.com" class="text-gray-400 hover:text-white transition-colors">Climate VCs</a>
-                    <a href="https://saasvclist.com" class="text-gray-400 hover:text-white transition-colors">SaaS VCs</a>
-                    <a href="https://biotechvclist.com" class="text-gray-400 hover:text-white transition-colors">Biotech VCs</a>
-                    <a href="https://deeptechvclist.com" class="text-gray-400 hover:text-white transition-colors">DeepTech VCs</a>
-                    <a href="https://healthcarevclist.com" class="text-gray-400 hover:text-white transition-colors">Healthcare VCs</a>
-                    <a href="https://consumervclist.com" class="text-gray-400 hover:text-white transition-colors">Consumer VCs</a>
-                    <a href="https://web3vclist.com" class="text-gray-400 hover:text-white transition-colors">Web3 VCs</a>
-                    <a href="https://seedvclist.com" class="text-gray-400 hover:text-white transition-colors">Seed VCs</a>
-                    <a href="https://preseedvclist.com" class="text-gray-400 hover:text-white transition-colors">Pre-Seed VCs</a>
+                    <a href="https://aivclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">AIVCList.com</span>
+                    </a>
+                    <a href="https://fintechvclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">FintechVCList.com</span>
+                    </a>
+                    <a href="https://climatevclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">ClimateVCList.com</span>
+                    </a>
+                    <a href="https://saasvclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">SaaSVCList.com</span>
+                    </a>
+                    <a href="https://biotechvclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">BiotechVCList.com</span>
+                    </a>
+                    <a href="https://deeptechvclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">DeepTechVCList.com</span>
+                    </a>
+                    <a href="https://healthcarevclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">HealthcareVCList.com</span>
+                    </a>
+                    <a href="https://consumervclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">ConsumerVCList.com</span>
+                    </a>
+                    <a href="https://web3vclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">Web3VCList.com</span>
+                    </a>
+                    <a href="https://seedvclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">SeedVCList.com</span>
+                    </a>
+                    <a href="https://preseedvclist.com" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all text-sm">
+                        <span class="inline-block">PreSeedVCList.com</span>
+                    </a>
                 </div>
             </div>
         </div>
         
         <!-- Bottom Bar -->
-        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm">
             <p>&copy; {{ now.Year }} VC List Network. All rights reserved.</p>
+            <p class="mt-2 sm:mt-0">Made with <span class="text-red-500">❤</span> for founders</p>
         </div>
     </div>
 </footer>
